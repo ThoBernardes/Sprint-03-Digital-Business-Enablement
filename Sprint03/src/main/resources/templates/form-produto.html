@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms fornecedor</title>
+    <link rel="stylesheet" th:href="@{/css/forms-produto.css}">
+</head>
+<body>
+<h3>Registrar Produto</h3>
+<br><br>
+<form th:action="@{/produto/processForm}" th:object="${produto}" method="GET">
+    <div style="background-color: #eee; padding: 10px; border-radius: 4px;">
+
+        Nome: <input type="text" th:field="*{nome}">
+
+        <br><br>
+
+        Preço: <input type="number" th:field="*{preco}">
+
+        <br><br>
+
+        Descrição: <input type="text" th:field="*{descricao}">
+
+        <br><br>
+
+        Fornecedor ID: <input type="number" th:field="*{fornecedorId}">
+
+        <br><br>
+
+    </div>
+    <br>
+    <input type="submit" value="Registrar">
+</form>
+</body>
+</html>

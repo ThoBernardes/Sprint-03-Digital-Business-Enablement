@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados Produtos</title>
+    <link rel="stylesheet" th:href="@{/css/home.css}">
+</head>
+<body>
+<a th:href="@{/produto/form}" class="button add">Adicionar</a>
+<a th:href="@{/fornecedor/lista}" class="button add">Fornecedores</a>
+<div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Preço</th>
+            <th>Descrição</th>
+            <th>FornecedorId</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="tempProdutos: ${produtos}">
+            <td th:text="${tempProdutos.id}"></td>
+            <td th:text="${tempProdutos.nome}"></td>
+            <td th:text="${tempProdutos.preco}"></td>
+            <td th:text="${tempProdutos.descricao}"></td>
+            <td th:text="${tempProdutos.fornecedorId}"></td>
+            <td>
+                <a th:href="@{/produto/delete(produtoId=${tempProdutos.id})}" class="button  delete">Delete</a>
+            </td>
+        <tr/>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms fornecedor</title>
+    <link rel="stylesheet" th:href="@{/css/forms.css}">
+</head>
+<body>
+<h3>Registrar fornecedor</h3>
+<br><br>
+<form th:action="@{/fornecedor/processForm}" th:object="${fornecedor}" method="GET">
+    <div style="background-color: #eee; padding: 10px; border-radius: 4px;">
+
+        Nome: <input type="text" th:field="*{nome}">
+
+        <br><br>
+
+        Endereço URL: <input type="text" th:field="*{enderecoURL}">
+
+        <br><br>
+
+        Contato: <input type="text" th:field="*{contato}">
+
+        <br><br>
+
+    </div>
+    <br>
+    <input type="submit" value="Registrar">
+</form>
+</body>
+</html>
